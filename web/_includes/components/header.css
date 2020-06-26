@@ -2,6 +2,7 @@
     font-size: var(--font-size-large);
     font-weight: 600;
     text-transform: lowercase;
+    font-family: "Faune", "Inter", sans-serif !important;
 }
 
 .mainHeader a {

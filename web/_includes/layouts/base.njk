@@ -10,7 +10,8 @@
     <!-- TODO: Load fonts locally -->
     {# <link rel='stylesheet' href='https://www.cnap.graphismeenfrance.fr/faune/styles/faune-fontes.css'> #}
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;800&display=swap" rel="stylesheet">
-
+  </head>
+  <body>
     {% set css %}
       {% include "fonts.css" %}
       {% include "variables.css" %}
@@ -19,8 +20,7 @@
     <style>
       {{ css | cssmin | safe }}
     </style>
-  </head>
-  <body>
+
     {% include "components/header.njk" %}
 
     <div class="brand" aria-hidden="true">
