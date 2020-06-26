@@ -2,4 +2,12 @@
 layout: layouts/base.njk
 templateClass: tmpl-home
 ---
+
+{% set css %}
+    {% include "layouts/home.css" %}
+{% endset %}
+<style>
+    {{ css | cssmin | safe }}
+</style>
+
 {{ content | safe }}

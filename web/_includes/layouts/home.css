@@ -1,0 +1,257 @@
+.home .intro h1 {
+    font-size: var(--font-size-medium);
+    font-size: 1.2rem;
+    font-weight: 400;
+    margin-bottom: 0.5rem;
+}
+
+.home .cta-block {
+    display: block;
+    position: relative;
+    height: 100%;
+    overflow: hidden;
+    margin-top: 4rem;
+    min-height: 20rem;
+}
+
+.home .cta-block .left {
+    float: left;
+    width: 40%;
+    position: absolute;
+    top: 3rem;
+    left: 0;
+    z-index: 1;
+}
+
+.home .cta-block .left.left-text {
+    width: 60%;
+}
+
+.home .cta-block .right {
+    float: right;
+    width: 80%;
+}
+
+.home .cta-block .right .wrapper {
+    background-image: repeating-linear-gradient(
+        45deg,
+        var(--background-color),
+        var(--background-color) 5px,
+        var(--brand-color-1) 5px,
+        var(--brand-color-1) 6px
+    );
+    position: relative;
+}
+
+.home .cta-block .right .wrapper img {
+    width: 100%;
+    position: relative;
+    top: -0.2rem;
+    left: -0.4rem;
+}
+
+/* .home .cta-block .right:before {
+    content: " ";
+    display: block;
+    width: 80%;
+    height: 100%;
+    position: absolute;
+    top: 0.2rem;
+    right: 0;
+    background: repeating-linear-gradient(
+        45deg,
+        var(--background-color),
+        var(--background-color) 5px,
+        var(--brand-color-1) 5px,
+        var(--brand-color-1) 6px
+    );
+} */
+
+.home .cta-block .right img {
+    width: 100%;
+    position: relative;
+    right: 0.2rem;
+}
+
+.home .cta-block h2 {
+    font-size: var(--font-size-xxlarge);
+    line-height: 105%;
+    margin-top: 0;
+}
+
+.home .cta-block .left ul, .home .cta-block .left p {
+    width: 100%;
+    background-color: var(--brand-color-1-dark);
+    padding: 2rem;
+    position: relative;
+    top: 1rem;
+    list-style-type: none;
+}
+
+.home .cta-block .left ul li {
+    margin-bottom: 1rem;
+}
+
+.home .cta-block .left ul li:last-child {
+    margin-bottom: 0;
+}
+
+.home .cta-block .left ul li a {
+    color: var(--font-color);
+    transition: 0.35s margin;
+    margin-left: 0.5rem;
+}
+
+.home .cta-block .left ul li:before {
+    content: "→";
+    position: relative;
+    left: 0;
+}
+
+.home .cta-block .left ul li:hover a {
+    margin-left: 0.75rem;
+}
+
+.home .services {
+    margin-top: 5rem;
+    margin-bottom: 3rem;
+}
+
+.home .services h2 {
+    font-size: var(--font-size-xxlarge);
+}
+
+.home .services-detail {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    column-gap: 3rem;
+    margin-top: 3.5rem;
+}
+
+.home .services-detail h3 {
+    margin-bottom: 1rem;
+    font-family: "Inter", "HelveticaNeue", Helvetica, sans-serif;
+    font-weight: 600;
+    font-size: 1rem;
+}
+
+.home .services .read-more {
+    margin-top: 2.5rem;
+}
+
+.home .services .read-more:before {
+    content: "→";
+    position: relative;
+    left: 0;
+}
+
+.home .services .read-more a {
+    font-size: var(--font-size-large);
+    font-family: "Faune", "Inter", "HelveticaNeue", Helvetica, sans-serif;
+    font-weight: normal;
+    color: var(--font-color);
+    transition: 0.35s margin;
+    margin-left: 0.5rem;
+}
+
+.home .services .read-more a:hover {
+    margin-left: 0.75rem;
+}
+
+.home .journal {
+    background-color: var(--brand-color-3);
+    padding: 3.5rem 0;
+    position: relative;
+    margin-top: 5rem;
+}
+
+.home .journal:before { 
+    content: "";
+    position: absolute;
+    top: -1rem;
+    display: block;
+    width: 100%;
+    height: 1rem;
+    background-color: var(--background-color);
+    background-image: radial-gradient(at top left, var(--brand-color-1) 10%, transparent 10%),
+        radial-gradient(at top right, var(--brand-color-1) 10%, transparent 10%),
+        radial-gradient(at bottom left, var(--brand-color-1) 10%, transparent 10%),
+        radial-gradient(at bottom right, var(--brand-color-1) 10%, transparent 10%),
+        radial-gradient(var(--brand-color-1) 20%, transparent 20%);
+    background-size: 6px 6px;
+}
+
+.home .journal h2 {
+    font-size: var(--font-size-xxlarge);
+}
+
+.home .projects {
+    margin-top: 7rem;
+    margin-bottom: 7rem;
+    background-color: var(--brand-color-2);
+    position: relative;
+    padding: 3.5rem 0 5rem 0;
+}
+
+.home .projects h2 {
+    font-size: var(--font-size-xxlarge); 
+    margin-bottom: 2rem;
+}
+
+.home .projects:before, .home .projects:after { 
+    content: "";
+    position: absolute;
+    display: block;
+    width: 100%;
+    height: 1rem;
+    background-color: var(--background-color);
+    background-image: radial-gradient(at top left, var(--brand-color-1) 10%, transparent 10%),
+        radial-gradient(at top right, var(--brand-color-1) 10%, transparent 10%),
+        radial-gradient(at bottom left, var(--brand-color-1) 10%, transparent 10%),
+        radial-gradient(at bottom right, var(--brand-color-1) 10%, transparent 10%),
+        radial-gradient(var(--brand-color-1) 20%, transparent 20%);
+    background-size: 6px 6px;
+}
+
+.home .projects:before {
+    top: -1rem;
+}
+
+.home .projects:after {
+    bottom: -1rem;
+}
+
+.page {
+    margin-bottom: 5rem;
+}
+
+@media screen and (max-width: 1000px) {
+    .home .cta-block .left {
+        top: 0;
+    }
+}
+
+@media screen and (max-width: 900px) {
+    .home .cta-block {
+        overflow: visible;
+    }
+
+    .home .cta-block .left, .home .cta-block .right {
+        float: none;
+        position: static;
+        width: 100%;
+    }
+
+    .home .cta-block .right img {
+        position: static;
+    }
+
+    .home .cta-block .right:before {
+        display: none;
+    }
+
+    .home .services-detail {
+        grid-template-columns: 1fr;
+        row-gap: 2rem
+    }
+}

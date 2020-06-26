@@ -1,0 +1,88 @@
+footer {
+    background-color: var(--brand-color-2);
+    padding-top: 4rem;
+    padding-bottom: 4rem;
+    position: relative;
+    z-index: 2;
+    /* font-size: 0.75rem; */
+}
+
+footer .content {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr 1fr;
+    column-gap: 6rem;
+}
+
+footer .content section:last-child {
+    text-align: right;
+}
+
+/* footer .content section:first-child {
+    margin-top: 1.5rem;
+    font-size: 0.8rem;
+} */
+
+footer .content section ul li {
+    list-style-type: none;
+}
+
+footer .content section ul li a {
+    color: var(--font-color);
+}
+
+#revue-embed {
+    margin-bottom: 2rem;
+    font-size: 0.8rem;
+}
+
+#revue-embed form {
+    width: 100%;
+}
+
+#revue-embed form input {
+    border: none;
+    padding: 0.5rem;
+    background-color: var(--shadow-color);
+    margin-bottom: 0.5rem;
+    display: block;
+    width: 100%;
+    color: var(--font-color);
+    border-radius: 3px;
+}
+
+#revue-embed form input[type="submit"] {
+    width: auto;
+    padding: 0.5rem 1rem;
+    margin-top: 1rem;
+}
+
+#revue-embed form input::placeholder {
+    color: var(--font-color);
+}
+
+.privacy {
+    font-size: 0.8rem;
+    margin-top: 2rem;
+}
+
+@media screen and (max-width: 900px) {
+    footer .content {
+        grid-template-columns: 1fr;
+        row-gap: 2rem;
+    }
+
+    footer .content section:last-child {
+        text-align: left;
+    }
+
+    .privacy {
+        font-size: 1rem;
+        margin-top: 4rem;
+    }
+}
+
+@media screen and (max-width: 800px) {
+    footer {
+        font-size: 1rem;
+    }
+}

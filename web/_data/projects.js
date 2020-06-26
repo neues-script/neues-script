@@ -8,21 +8,28 @@ const hasToken = !!client.config().token
 function generatePost (post) {
   return {
     ...post,
-    body: BlocksToMarkdown(post.body, { serializers, ...client.config() })
+    body: BlocksToMarkdown(post.body, { serializers, ...client.config() }),
+    intro: BlocksToMarkdown(post.intro, { serializers, ...client.config() }),
+    coverImages: BlocksToMarkdown(post.coverImages, { serializers, ...client.config() }),
+    storyboard: BlocksToMarkdown(post.storyboard, { serializers, ...client.config() }),
   }
 }
 
 async function getPosts () {
   // Learn more: https://www.sanity.io/docs/data-store/how-queries-work
-  const filter = groq`*[_type == "post" && defined(slug) && publishedAt < now()]`
+  const filter = groq`*[_type == "projects"]`
   const projection = groq`{
     _id,
+    selected,
     publishedAt,
     title,
     slug,
     excerpt,
-    categories,
     body,
+    intro,
+    coverImages,
+    storyboard,
+    resources,
     tags,
     categories[]->
   }`

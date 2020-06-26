@@ -13,9 +13,21 @@ module.exports = function(eleventyConfig) {
     return util.inspect(value, {compact: false})
    });
 
-   eleventyConfig.addFilter("readableDate", dateObj => {
+  eleventyConfig.addFilter("readableDate", dateObj => {
     return new Date(dateObj).toDateString()
   });
+
+  eleventyConfig.addFilter("getSelectedProjects", projects => {
+    return projects.filter((project) => {
+      return project.data.project.selected;
+    });
+  });
+
+  eleventyConfig.addFilter("consoleDump", function(anything) {
+    console.log(anything);
+  });
+
+  eleventyConfig.addPassthroughCopy("assets");
 
   // https://html.spec.whatwg.org/multipage/common-microsyntaxes.html#valid-date-string
   eleventyConfig.addFilter('htmlDateString', (dateObj) => {

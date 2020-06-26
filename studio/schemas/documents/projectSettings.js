@@ -1,12 +1,13 @@
 export default {
-  name: 'category',
+  name: 'projectPage',
   type: 'document',
-  title: 'Category',
+  title: 'Project Page Settings',
   fields: [
     {
       name: 'title',
       type: 'string',
-      title: 'Title'
+      title: 'Title',
+      validation: Rule => Rule.required()
     },
     {
       name: 'description',

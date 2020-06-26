@@ -1,139 +1,133 @@
-/* Tufte-ish CSS styles */
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
 html {
-    font-size: 15px;
+    font-size: 20px;
 }
 
 body {
-    width: 87.5%;
+    background-color: var(--background-color);
+    color: var(--font-color);
+    font-family: "Inter", "HelveticaNeue", Helvetica, sans-serif;
+}
+
+.wide {
+    width: 1240px;
+    max-width: 90vw;
     margin-left: auto;
     margin-right: auto;
-    padding-left: 12.5%;
-    font-family: Palatino, "Palatino Linotype", "Palatino LT STD", "Book Antiqua", Georgia, serif;
-    background-color: #fffff8;
-    color: #111;
-    max-width: 1400px;
-    counter-reset: sidenote-counter;
 }
 
-h1 {
+.narrow {
+    width: 950px;
+    max-width: 90vw;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.xnarrow {
+    width: 700px;
+    max-width: 90vw;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+::selection {
+    background-color: var(--brand-color-4);
+}
+
+main {
+    margin-top: 8rem;
+}
+
+h1, h2, h3, h4, h5 {
+    font-family: "Faune", "Inter", "HelveticaNeue", Helvetica, sans-serif;
     font-weight: 400;
-    margin-top: 4rem;
-    margin-bottom: 1.5rem;
-    font-size: 3.2rem;
-    line-height: 1;
 }
 
-h1.home {
-  font-size: 2.1rem;
+.brand h2 {
+    color: var(--brand-color-1);
+    position: fixed;
+    text-transform: lowercase;
+    font-family: "Inter", "HelveticaNeue", Helvetica, sans-serif;
+    font-weight: 800;
+    font-size: 11.75rem;
+    background-image: radial-gradient(at top left, var(--brand-color-1) 10%, transparent 10%),
+        radial-gradient(at top right, var(--brand-color-1) 10%, transparent 10%),
+        radial-gradient(at bottom left, var(--brand-color-1) 10%, transparent 10%),
+        radial-gradient(at bottom right, var(--brand-color-1) 10%, transparent 10%),
+        radial-gradient(var(--brand-color-1) 20%, transparent 20%);
+    background-size: 6px 6px;
+    -webkit-background-clip: text;
+    -moz-background-clip: text;
+    -webkit-text-fill-color: transparent; 
+    -moz-text-fill-color: transparent;
+    z-index: -1;
+    -webkit-touch-callout: none; 
+    -webkit-user-select: none; 
+    -khtml-user-select: none; 
+    -moz-user-select: none; 
+    -ms-user-select: none; 
+    user-select: none; 
 }
 
-h2 {
-    font-style: italic;
-    font-weight: 400;
-    margin-top: 2.1rem;
-    margin-bottom: 1.4rem;
-    font-size: 2.2rem;
-    line-height: 1;
+.brand h2:first-child {
+    top: 200px;
+    left: -360px;
+    transform: rotate(-90deg);
+    /* animation: brand-left 10s none infinite; */
 }
 
-h3 {
-    font-style: italic;
-    font-weight: 400;
-    font-size: 1.7rem;
-    margin-top: 2rem;
-    margin-bottom: 1.4rem;
-    line-height: 1;
+.brand h2:last-child {
+    bottom: 170px;
+    right: -300px;
+    transform: rotate(-90deg);
+    /* animation: brand-right 10s none infinite; */
 }
 
-article {
-    padding: 5rem 0rem;
+.large-text {
+    font-size: var(--font-size-xlarge);
+    line-height: 135%;
 }
 
-section {
-    padding-top: 1rem;
-    padding-bottom: 1rem;
-}
-
-p,
-ol,
-ul {
-    font-size: 1.4rem;
-    line-height: 2rem;
-}
-
-p {
-    margin-top: 1.4rem;
-    margin-bottom: 1.4rem;
-    padding-right: 0;
-    vertical-align: baseline;
-    max-width: 700px;
-}
-
-blockquote {
-    font-size: 1.4rem;
-}
-
-blockquote p {
-    width: 55%;
-    margin-right: 40px;
-}
-
-blockquote footer {
-    width: 55%;
-    font-size: 1.1rem;
-    text-align: right;
-}
-
-section > p,
-section > footer,
-section > table {
-    width: 55%;
-}
-
-/* 50 + 5 == 55, to be the same width as paragraph */
-section > ol,
-section > ul {
-    width: 50%;
-    -webkit-padding-start: 5%;
-}
-
-li:not(:first-child) {
-    margin-top: 0.25rem;
-}
-
-figure {
-    padding: 0;
-    border: 0;
-    font-size: 100%;
-    font: inherit;
-    vertical-align: baseline;
-    max-width: 55%;
-    -webkit-margin-start: 0;
-    -webkit-margin-end: 0;
-    margin: 0 0 3em 0;
+.medium-text {
+    font-size: var(--font-size-large);
+    line-height: 135%;
 }
 
 figcaption {
-    float: right;
-    clear: right;
-    margin-top: 0;
-    margin-bottom: 0;
-    font-size: 1.1rem;
-    line-height: 1.6;
-    vertical-align: baseline;
-    position: relative;
-    max-width: 40%;
+    font-size: 0.7rem;
 }
 
-figure.fullwidth figcaption {
-    margin-right: 24%;
+@keyframes brand-left {
+    0% {
+        top: 200px;
+    }
+    50% {
+        top: 250px;
+    }
+    100% {
+        top: 200px;
+    }
 }
 
-/* Links: replicate underline that clears descenders */
-a:link,
-a:visited {
-    color: inherit;
+@keyframes brand-right {
+    0% {
+        bottom: 170px;
+    }
+    50% {
+        bottom: 220px;
+    }
+    100% {
+        bottom: 170px;
+    }
 }
-a:hover {
-  text-decoration: none;
+
+@media screen and (max-width: 800px) {
+    html {
+        font-size: 16px;
+    }
 }

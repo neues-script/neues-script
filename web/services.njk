@@ -1,0 +1,20 @@
+---
+layout: layouts/home.njk
+navtitle: Services
+permalink: /services/
+---
+
+<article class="narrow page">
+    <h1>{{services.title}}</h1>
+
+    {{ services.body | markdownify | safe }}
+</article>
+
+
+{% set css %}
+  {% include "layouts/post.css" %}
+{% endset %}
+
+<style>
+  {{ css | cssmin | safe }}
+</style>

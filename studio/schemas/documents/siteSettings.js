@@ -7,30 +7,32 @@ export default {
     {
       name: 'title',
       type: 'string',
-      title: 'Title'
+      title: 'Title',
+      validation: Rule => Rule.required()
     },
     {
       name: 'description',
       type: 'text',
       title: 'Description',
-      description: 'Describe your blog for search engines and social media.'
+      description: 'Describe your blog for search engines and social media.',
+      validation: Rule => Rule.required()
+    },
+    {
+      name: 'author',
+      type: 'string',
+      title: 'Author',
+      validation: Rule => Rule.required()
     },
     {
       name: 'keywords',
       type: 'array',
       title: 'Keywords',
-      description: 'Add keywords that describes your blog.',
+      description: 'Add keywords that describe your blog.',
       of: [{type: 'string'}],
       options: {
         layout: 'tags'
-      }
-    },
-    {
-      name: 'author',
-      type: 'reference',
-      description: 'Publish an author and set a reference to them here.',
-      title: 'Author',
-      to: [{type: 'author'}]
+      },
+      validation: Rule => Rule.required()
     }
   ]
 }

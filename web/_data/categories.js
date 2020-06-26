@@ -6,19 +6,18 @@ const overlayDrafts = require('../utils/overlayDrafts')
 
 const hasToken = !!client.config().token
 
-function generateAuthor (author) {
+function generateCat (cat) {
   return {
-    ...author,
-    bio: BlocksToMarkdown(author.bio, { serializers, ...client.config() })
+    ...cat,
   }
 }
 
-async function getAuthors () {
-  const filter = groq`*[_type == "author"]`
+async function getCategories () {
+  const filter = groq`*[_type == "category"]`
   const docs = await client.fetch(filter).catch(err => console.error(err))
-  const authors = docs.map(generateAuthor)
-  const reducedAuthors = overlayDrafts(hasToken, authors)
-  return reducedAuthors
+  const categories = docs.map(generateCat)
+  const reducedCategories = overlayDrafts(hasToken, categories)
+  return reducedCategories
 }
 
-module.exports = getAuthors
+module.exports = getCategories

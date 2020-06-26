@@ -1,0 +1,21 @@
+<header class="mainHeader">   
+    <div class="wide">
+        <h1><a href="/">Neues Script</a></h1>
+        <nav>
+            <ul>
+                <li><a href="/">Home</a></li>
+                <li><a href="/projects">Projects</a></li>
+                <li><a href="/services">Services</a></li>
+                <li><a href="/about">About</a></li>
+                <li><a href="/journal">Journal</a></li>
+            </ul>
+        </nav>
+    </div>
+</header>
+
+{% set css %}
+    {% include "components/header.css" %}
+{% endset %}
+<style>
+    {{ css | cssmin | safe }}
+</style>

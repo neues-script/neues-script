@@ -1,10 +1,16 @@
 ---
 layout: layouts/home.njk
-navtitle: Archive
-permalink: /posts/
+navtitle: Journal
+permalink: /journal/
 ---
 
-<h1>Archive</h1>
-
-{% set postslist = collections.myPosts %}
-{% include "postslist.njk" %}
+<div class="wide archive">
+  <div class="narrow">
+    <h2>{{journalSettings.title}}</h2>
+    <p class="large-text">
+      {{journalSettings.description}}
+    </p>
+  </div>
+  {% set postslist = collections.myPosts %}
+  {% include "components/postArray.njk" %}
+</div>

@@ -1,0 +1,77 @@
+---
+layout: layouts/base.njk
+templateClass: tmpl-project
+---
+<article class="wide">
+
+  {% if project.intro %}
+    <h1 class="narrow small-title">{{ project.title }}</h1>
+    <div class="narrow medium-text">
+      {{ project.intro | markdownify | safe }}
+    </div>
+  {% else %}
+    <h1 class="narrow">{{ project.title }}</h1>
+  {% endif %}
+
+  {% if project.coverImages %}
+    <div class="wide image-gallery">
+      {{ project.coverImages | markdownify | safe }}
+    </div>
+  {% endif %}
+
+  <div class="xnarrow">
+    {{ project.body | markdownify | safe }}
+  </div>
+
+  {% if project.storyboard %}
+    <div class="narrow image-gallery">
+      {{ project.storyboard | markdownify | safe }}
+    </div>
+  {% endif %}
+  
+  {% if project.resources %}
+    <hr class="narrow" />
+    <h2 class="narrow">Resources</h2>
+    <ul class="narrow resources">
+    {% for resource in project.resources %}
+        <li><a href={{resource.href}}>{{resource.linkName}}</a></li>
+    {% endfor %}
+    </ul>
+  {% endif %}
+</article>
+
+<div class="more-posts-wrapper">
+  <div class="narrow more-posts">
+    {% set previousPost = collections.projects | getPreviousCollectionItem(page) %}
+    {% set nextPost = collections.projects | getNextCollectionItem(page) %}
+
+    <p>
+      {% if previousPost.data.project.title %}
+        <a href="/projects/{{previousPost.data.project.slug.current}}">← Previous project </a>
+      {% endif %}
+    </p>
+    <p><a href="{{ '/' | url }}">Home</a></p>
+    <p>
+      {% if nextPost.data.project.title %}
+        <a href="/projects/{{nextPost.data.project.slug.current}}">Next project →</a>
+      {% endif %}
+    </p>
+  </div>
+
+  {# <section class="journal">
+    <div class="wide">
+      <h2 class="narrow">More projects</h2>
+      {% set projectlist = collections.projects.slice(0,2) %}
+      {% include "components/projectList.njk" %}
+    </div>
+  </section> #}
+</div>
+
+
+
+{% set css %}
+  {% include "layouts/post.css" %}
+{% endset %}
+<style>
+  {{ css | cssmin | safe }}
+</style>

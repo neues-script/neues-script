@@ -2,9 +2,49 @@
 layout: layouts/base.njk
 templateClass: tmpl-post
 ---
-<article>
-  <h1>{{ post.title }}</h1>
-  <p>Written by {% for author in post.authors %}{{author.name}}{% endfor %}  </p>
-  {{ post.body | markdownify | safe }}
-  <p><a href="{{ '/' | url }}">← Home</a></p>
+
+<article class="wide">
+  
+  <h1 class="narrow">{{ post.title }}</h1>
+  
+  <div class="xnarrow">
+    {{ post.body | markdownify | safe }}
+  </div>
+  
 </article>
+
+<div class="more-posts-wrapper">
+  <div class="narrow more-posts">
+    {% set previousPost = collections.myPosts | getPreviousCollectionItem(page) %}
+    {% set nextPost = collections.myPosts | getNextCollectionItem(page) %}
+
+    <p>
+      {% if previousPost.data.post.title %}
+        <a href="/posts/{{previousPost.data.post.slug.current}}">← Previous post </a>
+      {% endif %}
+    </p>
+    <p><a href="{{ '/' | url }}">Home</a></p>
+    <p>
+      {% if nextPost.data.post.title %}
+        <a href="/posts/{{nextPost.data.post.slug.current}}">Next post →</a>
+      {% endif %}
+    </p>
+  </div>
+
+  <section class="journal">
+    <div class="narrow">
+      <h2>More posts</h2>
+      {% set postslist = collections.myPosts.slice(0,home.journalLimit) %}
+      {% include "components/postArraySimple.njk" %}
+    </div>
+  </section>
+</div>
+
+
+{% set css %}
+  {% include "layouts/post.css" %}
+{% endset %}
+
+<style>
+  {{ css | cssmin | safe }}
+</style>

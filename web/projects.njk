@@ -1,0 +1,19 @@
+---
+layout: layouts/home.njk
+navtitle: Projects
+permalink: /projects/
+---
+
+<div class="projects-page">
+  <div class="narrow">
+    <h2>{{projectSettings.title}}</h2>
+    <p class="large-text">
+      {{projectSettings.description}}
+    </p>
+  </div>
+
+  <div class="wide">
+    {% set projectlist = collections.projects %}
+    {% include "components/projectList.njk" %}
+  </div>
+</p>

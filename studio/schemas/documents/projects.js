@@ -1,22 +1,26 @@
 import {format} from 'date-fns'
 
 export default {
-  name: 'post',
+  name: 'projects',
   type: 'document',
-  title: 'Blog Post',
+  title: 'Projects',
   fields: [
+    {
+      name: 'selected',
+      type: 'boolean',
+      title: 'Featured',
+      description: 'If this is set to true, the post will be shown on the front page'
+    },
     {
       name: 'title',
       type: 'string',
-      title: 'Title',
-      description: 'Blog post title',
+      title: 'Project Title',
       validation: Rule => Rule.required()
     },
     {
       name: 'slug',
       type: 'slug',
       title: 'Slug',
-      description: 'Some frontends will require a slug to be set to be able to show the post',
       options: {
         source: 'title',
         maxLength: 96
@@ -27,7 +31,6 @@ export default {
       name: 'publishedAt',
       type: 'datetime',
       title: 'Published at',
-      description: 'This can be used to schedule post for publishing',
       validation: Rule => Rule.required()
     },
     {
@@ -59,10 +62,36 @@ export default {
       validation: Rule => Rule.required()
     },
     {
+      name: 'intro',
+      type: 'bodyPortableText',
+      title: 'Optional: Introduction',
+      description: 'Short intro to the project, this will be shown on the top of the project together with the cover image (optional)'
+    },
+    {
+      name: 'coverImages',
+      title: 'Optional: Cover images',
+      type: 'array',
+      of: [{type: 'mainImage'}],
+      description: 'Add one or more images to show at the top of the project'
+    },
+    {
       name: 'body',
       type: 'bodyPortableText',
       title: 'Body',
       validation: Rule => Rule.required()
+    },
+    {
+      type: 'array',
+      of: [{type: 'mainImage'}],
+      title: 'Optional: Storyboard Images',
+      name: 'storyboard',
+      description: 'Add a storyboard with images at the end of each project'
+    },
+    {
+      name: 'resources',
+      type: 'array',
+      title: 'Optional: Resources',
+      of: [{type: 'externalLink'}]
     }
   ],
   orderings: [

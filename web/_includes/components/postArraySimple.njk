@@ -1,0 +1,22 @@
+<div class="posts-overview">
+    {% for post in postslist %}
+    {% set currentPost = post.data.post %}
+        <div class="post" style="--category-color: {{currentPost.categories[0].color}}">
+            <div class="post-wrapper">
+                <div class="left">
+                    <h3>{{currentPost.title}}</h3>
+                </div>
+                <div class="right">
+                    <p class="read-more"><a href="{{ post.url | url }}" class="read-more">Read more</a></p>
+                </div>
+            </div>
+        </div>
+    {% endfor %}
+</div>
+
+{% set css %}
+    {% include "components/postArray.css" %}
+{% endset %}
+<style>
+    {{ css | cssmin | safe }}
+</style>

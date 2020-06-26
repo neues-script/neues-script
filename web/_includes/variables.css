@@ -1,0 +1,37 @@
+:root {
+    --background-color: #fff;
+    --font-color: #083626;
+    --brand-color-1: #4DD1A4;
+    --brand-color-1-dark: #01BE7D;
+    --brand-color-2: #FF9A6E;
+    --brand-color-3: #FFFEEE;
+    --brand-color-4: #FB8DE3;
+
+    --category-color: #4DD1A4;
+    --shadow-color: #F3835E;
+    --project-background: rgba(255, 254, 238, 0.15);
+
+    --post-shadow: repeating-linear-gradient(
+        45deg,
+        #FFFBF8,
+        #FFFBF8 5px,
+        #FF9A6E 5px,
+        #FF9A6E 6px
+    );;
+    --post-background: #FFFEEE;
+    --post-background-hover: #FFF;
+    --post-wrapper-background: #FFF;
+
+    --font-size-normal: 1rem;
+    --font-size-medium: 1.2em;
+    --font-size-large: 1.6rem;
+    --font-size-xlarge: 2rem;
+    --font-size-xxlarge: 2.5rem;
+}
+
+@media screen and (max-width: 800px) {
+    :root {
+        --font-size-xlarge: 1.8rem;
+        --font-size-xxlarge: 2rem;
+    }
+}
