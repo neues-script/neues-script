@@ -1,0 +1,20 @@
+---
+layout: layouts/home.njk
+navtitle: Privacy
+permalink: /privacy/
+---
+
+<article class="narrow page">
+    <h1>{{privacy.title}}</h1>
+
+    {{ privacy.body | markdownify | safe }}
+</article>
+
+
+{% set css %}
+  {% include "layouts/post.css" %}
+{% endset %}
+
+<style>
+  {{ css | cssmin | safe }}
+</style>

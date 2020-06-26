@@ -22,6 +22,7 @@ import category from './objects/category'
 import videoLink from './objects/videoLink'
 import projectSettings from './documents/projectSettings'
 import postSettings from './documents/postSettings'
+import privacy from './documents/privacy'
 
 // Then we give our schema to the builder and provide the result to Sanity
 export default createSchema({
@@ -46,7 +47,8 @@ export default createSchema({
     excerptPortableText,
     externalLink,
     category,
-    videoLink
+    videoLink,
+    privacy
 
     // When added to this list, object types can be used as
     // { type: 'typename' } in other document schemas

@@ -5,7 +5,7 @@ export default {
   fields: [
     {
       name: 'privacy',
-      type: 'text',
+      type: 'bodyPortableText',
       title: 'Privacy statement (footer)',
       validation: Rule => Rule.required()
     },
@@ -18,7 +18,7 @@ export default {
     },
     {
       name: 'contact',
-      type: 'text',
+      type: 'bodyPortableText',
       title: 'Contact info',
       validation: Rule => Rule.required()
     }

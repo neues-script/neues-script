@@ -6,13 +6,12 @@ const serializers = require('../utils/serializers')
 function generateBody (post) {
   return {
     ...post,
-    contact: BlocksToMarkdown(post.contact, { serializers, ...client.config() }),
-    privacy: BlocksToMarkdown(post.privacy, { serializers, ...client.config() })
+    body: BlocksToMarkdown(post.body, { serializers, ...client.config() })
   }
 }
 
 async function getPosts () {
-  const about = await client.fetch(groq`*[_type == "footer"][0]`)
+  const about = await client.fetch(groq`*[_type == "privacy"][0]`)
   return generateBody(about)
 }
 
