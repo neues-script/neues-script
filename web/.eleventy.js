@@ -20,7 +20,6 @@ module.exports = function(eleventyConfig) {
   eleventyConfig.addFilter("getSelectedProjects", projects => {
     return projects.filter((project) => {
       return project.data.project.selected;
-
     });
   });
 
